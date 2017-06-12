@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+
   borstiUrl = "http://borsti.inf.fh-flensburg.de/dirble/getDirbleCORS.php"
   let contentdiv = document.getElementById("content");
 
@@ -48,8 +49,6 @@ window.addEventListener("load", () => {
   contentdiv.appendChild(select_cntry);
   document.getElementById("searchBtn").addEventListener("click", () => {
 
-    console.log(contentdiv.hasNextChild());
-
     xhr_search.open("GET", borstiUrl+"?dirbleRequest=http://api.dirble.com/v2/stations/popular");
     xhr_search.send();
 
@@ -57,17 +56,16 @@ window.addEventListener("load", () => {
       if (xhr_search.readyState === 4) {
         if (xhr_search.status === 200) {
           let searchObj = JSON.parse(xhr_search.responseText);
+          let div_array = [];
           for (var i in searchObj) {
             {
-              let div = document.createElement("div");
+              div_array[i] = document.createElement("div");
               let img = document.createElement("img");
-              img.src = ""+searchObj[5].image.thumb.url+"";
+              img.src = ""+searchObj[i].image.thumb.url+"";
               img.alt = "FEHLER";
-              div.appendChild(img);
-              let label = document.createElement("label");
-              label.value = "test";
-
-              contentdiv.appendChild(div);
+              div_array[i].appendChild(img);
+              console.log(searchObj[i]);
+              contentdiv.appendChild(div_array[i]);
             }
           }
         }
