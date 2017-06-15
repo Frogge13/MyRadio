@@ -3,7 +3,6 @@ html, body {
   height: 100%;
   margin: 0px;
 }
-
 .sidebar {
   float: left;
   height: 100%;
@@ -14,7 +13,6 @@ html, body {
   position: fixed;
   overflow: hidden;
 }
-
 .content {
   padding-left: 250px;
   width: 100%;
@@ -23,7 +21,6 @@ html, body {
   background-color: blue;
   padding-bottom: 150px;
 }
-
 .player {
   height: 150px;
   width: 100%;
@@ -31,13 +28,11 @@ html, body {
   position: fixed;
   bottom: 0;
 }
-
 .header {
   padding-left: 250px;
   height: 100px;
   background-color: blue;
 }
-
  .search {
   padding-left: 250px;
   min-height: 100px;
@@ -45,10 +40,10 @@ html, body {
 }
 
 .thumbnail {
+  background-image: url('../noImage.png');
   height: 100px;
   width: 100px;
 }
-
 span{
   margin: 15px;
 }
