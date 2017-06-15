@@ -12,6 +12,7 @@ html, body {
   padding-bottom: 150px;
   box-sizing: border-box;
   position: fixed;
+  overflow: hidden;
 }
 
 .content {
@@ -29,4 +30,25 @@ html, body {
   background-color: green;
   position: fixed;
   bottom: 0;
+}
+
+.header {
+  padding-left: 250px;
+  height: 100px;
+  background-color: blue;
+}
+
+ .search {
+  padding-left: 250px;
+  min-height: 100px;
+  background-color: blue;
+}
+
+.thumbnail {
+  height: 100px;
+  width: 100px;
+}
+
+span{
+  margin: 15px;
 }

@@ -1,3 +1,4 @@
+"use strict";
 class WebPlayer extends HTMLElement {
   constructor() {
     super();
@@ -7,6 +8,7 @@ class WebPlayer extends HTMLElement {
     let pauseBtn = document.createElement("button");
     let volumerange = document.createElement("input");
     let audio = document.createElement("audio");
+    audio.id = "audioelement";
 
     playBtn.innerText = "Play";
     pauseBtn.innerText = "Pause";
@@ -25,7 +27,7 @@ class WebPlayer extends HTMLElement {
       }
     })
 
-    volumerange.addEventListener("change", () => {
+    volumerange.addEventListener("input", () => {
       this.volumeChange();
     });
 
@@ -50,7 +52,6 @@ class WebPlayer extends HTMLElement {
 
   volumeChange(){
     this.audio.volume = this.volumerange.value/100;
-    console.log(this.audio.volume);
   }
 }
 
